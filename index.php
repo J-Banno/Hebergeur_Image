@@ -26,7 +26,7 @@ if (isset($_FILES['image']) && $_FILES['image']['error'] == 0) {
         //On controle son extension et on renomme avec la date d'aujourd'hui et un chiffre aléatoire
         if (in_array($extensionImage, $extensionArray)) {
             //Chemin de stockage 
-            $uriImage = './asset' . time() . rand() . '.' . $extensionImage;
+            $uriImage = 'assets/' . time() . rand() . '.' . $extensionImage;
             move_uploaded_file($_FILES['image']['tmp_name'],  $uriImage);
             $error = 0;
         }
@@ -37,9 +37,11 @@ if (isset($_FILES['image']) && $_FILES['image']['error'] == 0) {
 
 
 if (isset($error) && $error == 0) {
-    echo '<div id = "containerImage">
+    echo '<div id = "containerImage" >
     <img style="max-width:100px" src="' . $uriImage . '"id ="image"/>
     </div>' . '<a href="./index.html">
     <button>Retour</button>
 </a>';
+} else if (isset($error) && $error == 1) {
+    echo "Votre image ne peut être envoyée. Vérifiez son extenssion et sa taille.";
 }

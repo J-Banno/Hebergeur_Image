@@ -1,0 +1,12 @@
+.form form {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.imageDownload {
+  margin-bottom: 15px;
+}

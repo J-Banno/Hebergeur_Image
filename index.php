@@ -35,7 +35,7 @@ if (isset($_FILES['image']) && $_FILES['image']['error'] == 0) {
     }
 };
 
-//Si on reçu un téléchagement sans erreur on affiche l'image
+//Si il ya un téléchagement sans erreur on affiche l'image
 if (isset($error) && $error == 0) {
     echo '<div id = "containerImage" >
     <img style="max-width:100px" src="' . $uriImage . '"id ="image"/>

@@ -35,7 +35,7 @@ if (isset($_FILES['image']) && $_FILES['image']['error'] == 0) {
     }
 };
 
-
+//Si on reçu un téléchagement sans erreur on affiche l'image
 if (isset($error) && $error == 0) {
     echo '<div id = "containerImage" >
     <img style="max-width:100px" src="' . $uriImage . '"id ="image"/>
@@ -43,5 +43,5 @@ if (isset($error) && $error == 0) {
     <button>Retour</button>
 </a>';
 } else if (isset($error) && $error == 1) {
-    echo "Votre image ne peut être envoyée. Vérifiez son extenssion et sa taille.";
+    echo "Votre image ne peut être envoyée. Vérifiez son extension et sa taille.";
 }
